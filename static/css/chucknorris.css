@@ -1,0 +1,168 @@
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+body 
+{
+min-height: 80%;
+background: url(whitebackground.jpg) no-repeat;
+background-size: cover;
+background-attachment: fixed;
+padding-bottom: 2%;
+overflow: scroll;
+font-family: 'Actor'
+}
+
+Header
+{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(whitebackground.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+
+}
+
+.main-nav {
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+}
+.main-nav ul li {
+    margin: 0;
+    padding: 0;
+    float:left;
+}
+.main-nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    color: rgb(255, 123, 0);
+    text-align: center;
+}
+
+.main-nav
+{
+	float: right;
+	list-style:none;
+	margin-top: 1%;
+}
+
+
+.main-nav li a
+{
+	color: rgb(255, 115, 0);
+	/*border: 1px solid rgba(40, 152, 193, 0.5);*/
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	text-align: center;
+	position: relative;
+	width: 100%;
+}
+
+.main-nav li.active a
+{
+	border: 1px solid rgb(255, 153, 0);
+}
+
+
+.main-nav :hover
+{
+
+	background-position: relative;
+	border: 1px solid rgb(255, 115, 0);
+	background : rgba(247, 175, 67, 0.5);
+}
+
+.logo img
+{
+	width: 200px;
+	height: auto;
+	float: left;
+}
+
+body
+{
+	font-family: monospace;
+}
+
+.row
+{
+	max-width: 1200px;
+	margin: auto;
+}
+
+.hero
+{
+	position: absolute;
+	width: 1200px;
+	margin-left: 150px;
+	margin-top: 40px;
+}
+
+h1
+{
+	color: rgb(255, 145, 0);
+	text-transform: uppercase;
+	font-size: 70px;
+	text-align: center;
+	margin-top: 275px;
+	margin-right: 50px;
+}
+
+.intro
+{
+	color: rgb(255, 145, 0);
+	font-size: 50px;
+	text-align: center;
+}
+
+
+
+.button
+{
+	margin-top: 30px;
+	margin-left: 440px; 
+}
+
+.btn
+{
+	border: 1px solid white;
+	padding: 10px 30px;
+	color: white;
+	text-decoration: none;
+	margin-right: 5px;
+	font-size: 13px;
+	text-transform: uppercase;
+	
+}
+
+.quote
+{
+    height: 200px;
+    width: 400px;
+    background: rgb(252, 151, 0);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -200px; 
+    font-size: 50px;
+}
+
+.footer
+{
+    size: 30px;
+    color:rgb(255, 145, 0);
+}
