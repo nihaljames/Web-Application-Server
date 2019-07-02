@@ -13,7 +13,7 @@ quote = response[start:end]
 file = open('static/css/test2.txt','w')
 file.write(quote)
 file.close()
-x
+
 
 app = Flask(__name__)
 
