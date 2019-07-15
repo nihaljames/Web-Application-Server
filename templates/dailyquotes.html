@@ -1,12 +1,29 @@
 <html>
-<head>
-		
+<head>		
 <title>Chuck Norris Quotes</title>
 <link href="static/css/chucknorris.css" rel="stylesheet" type="text/css">
- 
+
+            <script type="text/javascript">
+            var xhr = new XMLHttpRequest(); 
+            function getnewquote(){
+                //alert("Inside Function");
+                xhr.open('GET', "http://127.0.0.1:5000/newquote", true);
+                xhr.send();
+                xhr.addEventListener("readystatechange", processRequest, false);
+            }
+            function processRequest(e) {
+                //alert(xhr.readyState);
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    //alert(response);
+                    var text = xhr.responseText.substring(xhr.responseText.indexOf("value\":")+7,xhr.responseText.indexOf("}"))
+                    document.getElementById('divquote').innerHTML = text.fontsize(5);
+                }
+            }
+            </script>
+             
 </head>
-<body>
-	
+<body>	
 	<header>
 		<div class="row">
 			<div class="logo">
@@ -17,14 +34,31 @@
 		</ul>
 		</div>
 		<div class="hero">
-		<h1>Chuck Norris</h1>
-			
+		<h1>Chuck Norris</h1>	
 		</div>
+        <style>
+            .button {
+            background-color: rgb(255,165,0);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;  
+            position:absolute;
+            transition: .5s ease;
+            top: 70%;
+            left: 45%;     
+            }
+        </style>
 
-        <div class= "quote">
-        <p><object data="static/css/test2.txt"></object></p>
+        <div>
+                <button onclick="getnewquote()" class="button">NEW QUOTE</button>
+
+            <div class="quote" id="divquote">
+                
+            </div>
         </div>
-
 
 	</header>
 	<aside class = "intro">
@@ -37,19 +71,27 @@
     <div class="footer">
         <footer>
 
-            Carlos Ray Norris (born March 10, 1940) is an American martial artist, actor, film producer and screenwriter. 
-            After serving in the United States Air Force, he won many martial arts championships and later founded his own school of fighting, Chun Kuk Do. 
-            Norris is a black belt in Tang Soo Do, Brazilian jiu jitsu and Judo.
+            Carlos Ray Norris (born March 10, 1940) is an American martial artist,
+            actor, film producer and screenwriter. After serving in the United States Air Force, 
+            he won many martial arts championships and later founded his own school of fighting, 
+            Chun Kuk Do. Norris is a black belt in Tang Soo Do, Brazilian jiu jitsu and Judo.
             <br>
             <br>
-            Norris appeared in Way of the Dragon (in which he starred alongside Bruce Lee), Good Guys Wear Black, The Octagon, Lone Wolf McQuade, Code of Silence, 
-            The Delta Force, and Missing in Action 1, 2, & 3. He was The Cannon Group's leading star in the 1980s.[4][5] He played the title role in the television 
-            series Walker, Texas Ranger from 1993 until 2001. Since 1997, he and model Christie Brinkley have been the main spokespersons for the Total Gym infomercials.
+            Norris appeared in Way of the Dragon (in which he starred alongside Bruce Lee), 
+            Good Guys Wear Black, The Octagon, Lone Wolf McQuade, Code of Silence, 
+            The Delta Force, and Missing in Action 1, 2, & 3. He was The Cannon Group's 
+            leading star in the 1980s.[4][5] He played the title role in the television 
+            series Walker, Texas Ranger from 1993 until 2001. Since 1997, he and model 
+            Christie Brinkley have been the main spokespersons for the Total Gym infomercials.
             <br>
             <br>
-            Norris has written several books on martial arts, exercise, philosophy, politics, Christian religion, western novels, and biography. He was twice a New York Times best-selling author, 
-            first with his book on his personal philosophy of positive force and the psychology of self-improvement based on personal anecdotes called The Secret of Inner Strength: My Story (1988). 
-            His second New York Times Best Seller, Black Belt Patriotism: How to Reawaken America (2008), was about his critique on current issues in the USA.
+            Norris has written several books on martial arts, exercise, philosophy, politics, 
+            Christian religion, western novels, and biography. He was twice a New York Times 
+            best-selling author, first with his book on his personal philosophy of positive force 
+            and the psychology of self-improvement based on personal anecdotes called The Secret of
+            Inner Strength: My Story (1988). His second New York Times Best Seller, 
+            Black Belt Patriotism: How to Reawaken America (2008), was about his critique on current 
+            issues in the USA.
         </footer>
     </div>
 </body>
