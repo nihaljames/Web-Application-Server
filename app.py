@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import requests
+import functions
   
 app = Flask(__name__)
 
@@ -19,11 +19,13 @@ def nihal():
 def norris():
     return render_template("dailyquotes.html")
 
+@app.route("/template")
+def template():
+    return render_template("template.html")
+
 @app.route("/newquote")
 def newquote():
-    url = 'https://api.chucknorris.io/jokes/random'
-    response = requests.get(url).text
-    return response
+    return functions.getquote()
     
 if __name__ == "__main__":
     app.run(debug=True) 
