@@ -9,7 +9,7 @@
                 const Url='http://127.0.0.1:5000/newquote';
                 $('.btn').click(function(){
                     $.getJSON(Url, function(result){
-                        document.getElementById('divquote').innerHTML = result.updated_at.fontsize(5);
+                        document.getElementById('divquote').innerHTML = result.value.fontsize(5);
                     });
                 })
             })
